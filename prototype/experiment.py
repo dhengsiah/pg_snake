@@ -2,6 +2,7 @@
 
 import pygame
 import sys
+import time
 
 class block(pygame.Rect):
     
@@ -35,6 +36,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+            pygame.quit()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
@@ -81,5 +83,6 @@ while run:
     screen.fill(background)
     pygame.draw.rect(screen, (255,0,0), block(x,y,20,20))
     pygame.display.update()
+    time.sleep(0.5/1000)
                  
 pygame.quit()
